@@ -2,34 +2,40 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js'
 
 const appSettings = {
-    databaseURL: "https://shopping-cat-e07f0-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    databaseURL: "https://cat-base-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
-const moviesDB = ref(database, "movies");
+const shoppingListDB = ref(database, "shoppingList");
 
-console.log(app);
+//console.log(app);
 
 const button = document.getElementById("btn");
 const input = document.getElementById("input");
-
-/*
-showMsg = () => {
-    let inputCart = input.value;
-    console.log("Hello " + inputCart);
-} */
+const list = document.getElementById("shopping-list")
 
 button.addEventListener("click", () => {
 
     let inputCart = input.value;
-    push(moviesDB, inputCart);
 
-    console.log("Hello " + inputCart);
+    push(shoppingListDB, inputCart);
+
+    console.log("Item Added to Cart " + inputCart);
+
+    cleanInput();
+
+    addItem(inputCart);
 });
 
 
+let addItem = item => {
+    list.innerHTML += `<li>${item}</li>`
+}
 
+let cleanInput = () => {
+    input.value = ""
+}
 
 
 
