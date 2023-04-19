@@ -41,6 +41,8 @@ button{
     font-family: 'Rubik', sans-serif;
 }
 
-
+li{
+    list-style: none;
+}
 
 
