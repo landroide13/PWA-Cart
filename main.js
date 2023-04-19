@@ -25,12 +25,16 @@ button.addEventListener("click", () => {
 });
 
 onValue(shoppingListDB, (snapshot) => {
-    let items = Object.values(snapshot.val());
+    let items = Object.entries(snapshot.val());
     cleanListEl();
-    items.forEach(el => {
-        addItem(el);
-    });
-    console.log(items)
+
+    for(let i = 0; i < items.length; i++){
+        let currentItem = items[i];
+        let currentId = currentItem[0];
+        let currentVal = currentItem[1];
+
+        addItem(currentVal);
+    }
 })
 
 let addItem = item => {
