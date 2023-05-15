@@ -39,10 +39,9 @@ onValue(shoppingListDB, (snapshot) => {
     }else{
         list.innerHTML = "No items here..yet";
     }
-    
-})
+});
 
-let addItem = item => {
+const addItem = item => {
 
     let itemId = item[0];
     let itemVal = item[1];
@@ -56,15 +55,15 @@ let addItem = item => {
     })
 
     list.append(newEl)
-}
+};
 
 let cleanInput = () => {
     input.value = ""
-}
+};
 
 let cleanListEl = () => {
     list.innerHTML = ""
-}
+};
 
 
 //Slide Show Authomatic
@@ -84,9 +83,16 @@ function showSlides() {
   setTimeout(showSlides, 3500); // Change image every 3.5 seconds
 }
 
+//Register SW
 
-
-
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("/ServiceWorker.js")
+        .then(res => console.log("service worker registered"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+}
 
 
 
