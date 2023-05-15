@@ -27,7 +27,7 @@ img{
 
 .fade {
     animation-name: fade;
-    animation-duration: 2.0s;
+    animation-duration: 2.2s;
 }
 
 @keyframes fade {
@@ -88,4 +88,21 @@ ul li:hover{
     cursor: pointer;
 }
 
+/* FAB */
 
+.float{
+	position:fixed;
+	width:55px;
+	height:55px;
+	bottom:40px;
+	right:40px;
+	background-color:#AC485C;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:15px;
+}
