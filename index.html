@@ -8,18 +8,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Kitty Cart</title>
 </head>
 <body>
 
     <div class="container">
-        <img src="assets/cat3.jpeg" alt="" srcset="">
-        <input type="text" id="input" placeholder="">
 
+        <div class="slideshow-container">
+
+            <div class="mySlide fade">
+                <img src="assets/cat3.jpeg" alt="" srcset="">
+            </div>
+
+            <div class="mySlide fade">
+                <img src="assets/cat4.jpeg" alt="" srcset="">
+            </div>
+
+            <div class="mySlide fade">
+                <img src="assets/cat5.jpeg" alt="" srcset="">
+            </div>
+
+        </div>
+
+        <input type="text" id="input" placeholder="">
         <button id="btn">Add To Cart</button>
 
         <ul id="shopping-list"></ul>

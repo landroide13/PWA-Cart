@@ -18,6 +18,25 @@ img{
     margin: 0 auto;
 }
 
+/* Slider style */
+
+.slideshow-container{
+    position: relative;
+    margin: auto;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2.0s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}  
+
+/* Imput Style*/
+
 input{
     color: #432000;
     background-color: #DCE1EB;
