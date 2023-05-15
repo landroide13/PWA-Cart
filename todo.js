@@ -31,8 +31,13 @@ close.addEventListener('click', closeForm);
 
 add.addEventListener('click', () => {
 
-  let todoInput = todo.value;
-  //let descInput = desc.value;
+  let titleInput = todo.value;
+  let descInput = desc.value;
+
+  let todoInput = {
+    title: titleInput,
+    description: descInput
+  }
 
   push(todoListDB, todoInput);
 
@@ -65,7 +70,7 @@ const addItem = item => {
   let itemVal = item[1];
 
   let newEl = document.createElement("li");
-  newEl.textContent = itemVal;
+  newEl.textContent = itemVal.title;
 
   newEl.addEventListener("dblclick", () => {
       let target = ref(database, `TodoList/${itemId}`)
@@ -85,7 +90,7 @@ let cleanListEl = () => {
 
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("/ServiceWorker.js")
       .then(res => console.log("service worker registered", res))
